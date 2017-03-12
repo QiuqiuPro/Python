@@ -1,3 +1,4 @@
+'''
 リストと同じように、複数の値を一つの変数で管理することができるのだが、
 リストがインデックスで値を参照するのに対して、
 辞書型は任意のキー文字列で値を参照する。
@@ -19,7 +20,8 @@ sorted( food_price.keys() ) #文字コード順
 
 list( d.values() )
 list( d.items() )
-
+'''
+"""
 p.105
 food_price = { "Apple":100, "Banana":180, "Tomato":400 }
 for name in food_price.keys():
@@ -32,8 +34,9 @@ for name, price in food_price.items():
 #複数の値を複数の変数に割り当てる
 name, price = ["Mikan", 100]
 a, b, c = [2, 45, 216]
+"""
 
-
+"""
 # PRACTICE!!!
 records = {
     'Tanaka':72, 'Yamada':65, 'Hirata':100,
@@ -48,17 +51,16 @@ print("Sum points:", sum_v)
 print("Ave points:", ave_v)
 
 # print a table
-fmt = "|{0:<7}|{1:>4}|{2:>5}|"
+fmt = "|{0:<7}|{1:>5}|{2:>5}|"
 print(fmt.format("Name","Score","Diff"))
 for name, v in sorted( records.items() ):
     diff_v = v - ave_v
     diff_v = round(diff_v, 1)
     print(fmt.format(name, v, diff_v))
-
+"""
 
 # PRACTICE 2
-poem =
-'''
+poem ='''
 Three sang of love together: one with lips
 Crimson, with cheeks and bosom in a glow,
 
