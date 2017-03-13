@@ -1,3 +1,4 @@
+month = {"Apr":}
 week = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 first_day = "Wed" #Depends on what month you are in.
 today = int(input("What is the date today?"))
