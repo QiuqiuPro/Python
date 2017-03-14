@@ -39,3 +39,5 @@ print(new_date)
 
 date.replace("/","-")
 #str.replace(old,new[,count])
+
+#other methods is placed p.115. see when you need.
