@@ -30,7 +30,7 @@ def move_X_to_Y(list_X, list_Y):
 counter = 0                                              # 手順数を数える
 def hanoi(start_p, pass_p, end_p, n):
     if n-1 > 0: hanoi(start_p,end_p,pass_p,n-1)
-    # print("\n",m_stick_A,m_stick_B,m_stick_C,sep="\n") # 過程を表示する
+    print("\n",m_stick_A,m_stick_B,m_stick_C,sep="\n")   # 過程を表示する
     move_X_to_Y(start_p,end_p)
     global counter                                       # 手順数を数える
     counter += 1                                         # 手順数を数える

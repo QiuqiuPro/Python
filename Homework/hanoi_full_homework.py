@@ -16,26 +16,3 @@
 
 # リストの右側を杭の上側に見立てること。
 # より大きい数字をより大きい円盤に見立てること。
-m_stick_A = list(range(5,0,-1))
-m_stick_B = []
-m_stick_C = []
-
-def move_X_to_Y(list_X, list_Y):
-    if len(list_X) <= 0:
-        print("error")
-        return
-    list_Y.append(list_X[-1])
-    del list_X[-1]
-
-counter = 0                                              # 手順数を数える
-def hanoi(start_p, pass_p, end_p, n):
-    if n-1 > 0: hanoi(start_p,end_p,pass_p,n-1)
-    # print("\n",m_stick_A,m_stick_B,m_stick_C,sep="\n") # 過程を表示する
-    move_X_to_Y(start_p,end_p)
-    global counter                                       # 手順数を数える
-    counter += 1                                         # 手順数を数える
-    if n-1 > 0: hanoi(pass_p,start_p,end_p,n-1)
-
-hanoi( m_stick_A, m_stick_B, m_stick_C, len(m_stick_A) )
-print("\nfinal.",m_stick_A,m_stick_B,m_stick_C,sep="\n") # 最終結果を表示する
-print("手順数:2^n - 1 =",counter)                         # 手順数を数える
