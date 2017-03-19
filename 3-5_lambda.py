@@ -60,24 +60,66 @@
 # tri(13,15)
 
 # 先ほどの、引数に関数を指定する関数の部分を、無名関数で書き換えよう
-def calc_5_3(func):
-    return func(5,3)
-# calc_5_3 = lambda func : func(5,3)
-print( calc_5_3(lambda a,b : a * b) )
+# def calc_5_3(func):
+#     return func(5,3)
+# # calc_5_3 = lambda func : func(5,3)
+# print( calc_5_3(lambda a,b : a * b) )
+
+# 後半
 
 
 # リストに対する処理　map() filter()
 # lambdaが役に立つのは、関数の引数に関数オブジェクトを指定したい場面
 
+# lambdaをmap()とともに使う
+# 構文：map(funtion, iterable, ...)
+# function:関数オブジェクト iterable:リストやタプルなどの複数の値を持てるデータ型
+# REPL
+nums = [1,2,3,4,5]
+x2 = lambda x : x * 2
+list( map(x2, nums) )
 
+# lambdaをfilter()と共に使う
+# 構文：filter(function, iterable)
+# 第一引数の関数を、第二引数のリスト要素すべてに適用し、結果がTrueな要素だけを返す。
+# REPL
+nums = list(range(20))
+list(filter( lambda x : (x % 2) == 0, nums ))
+list(filter( lambda x : x > 13, nums ))
 
+# リストや辞書型の値を並び替えよう
+# リストを並び替え
+# sorted()はすでに使ったことがあるが、lambdaを組み合わせると、より自由に並び替えができる。
+# 構文：sorted(iterable [, key][, reverse])
+# keyには無名関数を指定する。reverseはデフォルトでFalseだが、Trueにすると大きい順（降順）になる。
+# animal_list = [
+#     ("ライオン", 58),
+#     ("チーター", 110),
+#     ("シマウマ", 60),
+#     ("トナカイ", 80)
+# ]
+# faster_list_l = sorted(
+#     animal_list,
+#     key = lambda ani : ani[1],
+#     reverse = True
+# )
+# for i in faster_list_l: print(i)
 
+# dict型をソートする
+# animal_dict = {
+#     "ライオン": 58,
+#     "チーター": 110,
+#     "シマウマ": 60,
+#     "トナカイ": 80
+# }
+# faster_list_d = sorted(
+#     animal_dict.items(),
+#     key= lambda ani : ani[1],
+#     reverse= True
+# )
+# for name, speed in faster_list_d:
+#     print(name, speed)
 
-
-
-
-
-
-
-
-# end
+# まとめ
+# 無名関数lambda
+# lambdaはリストに関する処理に役立つ。map(),filter(),sorted()が主要な関数

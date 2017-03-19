@@ -21,11 +21,13 @@ m_stick_B = []
 m_stick_C = []
 
 def move_X_to_Y(list_X, list_Y):
-    if len(list_X) <= 0:
+    try:
+        list_Y.append(list_X[-1])
+        del list_X[-1]
+    except:
         print("error")
+    finally:
         return
-    list_Y.append(list_X[-1])
-    del list_X[-1]
 
 counter = 0                                              # 手順数を数える
 def hanoi(start_p, pass_p, end_p, n):
