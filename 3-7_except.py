@@ -36,14 +36,16 @@
 
 # apples = 10
 # try:
-#     ppl = int( input("How many people?\n") )
+#     ppl = int(input("How many people?\n"))
 #     print( "each person can eat {0} apple(s).".format( round( apples/ppl, 1 ) ) )
 # except ValueError as e:
-#     print(e)
+#     print("ValueError:", e)
 # except ZeroDivisionError as e:
 #     print(e)
-# except:
-#     print("other error")
+# except Exception as e:
+#     print("Unknown Error:", e)
+# finally:
+#     print("we enjoyed eating apples.")
 
 # エラーの有無に関わらず最後まで実行したい時
 # ファイルなどのリソースを扱う際には必ず最後にリソースを閉じる終了処理を行わなければならない。
@@ -55,12 +57,31 @@
 # finally:
 #     リソースを閉じるなど必ず実行する処理
 
-# エラーを発生させる。
-# わざとエラーを発生させることができます。
-# 書式：
+# # エラーを発生させる。
+# # わざとエラーを発生させることができます。
+# # 書式：
 # raise エラー種類(メッセージ) # エラー種類は定義済みのものであることが必要。
-# REPL
+# # REPL
 # raise Exception("Hello, Error")
 
+# 3-6終了後に。
 # for構文と同じ機能の関数を作ってみよう。
 # イテレーターの章が既習であることが必要。
+# # 実際にfor構文の動作を手順で書き出すと、以下のようになる。
+# # (1)反復可能な値からイテレータを生成する
+# # (2)イテレータから値を一つ取り出す。値が取り出せたら手順(3)に移り、取り出せなければ、そこで繰り返しを終了する
+# # (3)処理ブロックを実行する
+# # (4)手順2に戻る
+def for_func(iterable, callback):
+    it = iter(iterable)
+    while True:
+        try:
+            v = next(it)
+            callback(v)
+        except StopIteration:
+            break
+
+for_func(
+    [1,2,3],
+    lambda x : print(x)
+)
