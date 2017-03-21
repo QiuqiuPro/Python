@@ -72,23 +72,25 @@
 # i
 # next(i)
 
-# 練習問題：奇数を返すイテレータを作ろう(30まで。)
-def genOdd():
-    i = 1
-    while i <= 30:
-        yield i
-        i += 2
-
-it = genOdd()
-for v in it:
-    print(v)
+# # 練習問題：奇数を返すイテレータを作ろう(30まで。)
+# def genOdd():
+#     i = 1
+#     while i <= 30:
+#         yield i
+#         i += 2
+#
+# it = genOdd()
+# for v in it:
+#     print(v)
 
 # 宿題：素数を返すイテレータを作ろう(30まで。)
 # ヒント：素数とは、1と自分自身以外の整数で割り切れないような整数。30まで。
 def dividable(lst, num):
+    ''' return True if any number in [lst] can divide [num].
+    Otherwise return False. '''
     # 一度でも割られてしまうと、アウト（素数ではない）。
     for i in lst:
-        if i == 1:
+        if i <= 1:
             continue
         elif num % i == 0:
             return True
@@ -97,12 +99,13 @@ def dividable(lst, num):
     else:
         return False
 
-def genPrime():
+# generator that gives Prime numbers.
+def genPrime(until_num):
     primes = []
-    for i in range(1, 31):
+    for i in range(2, until_num+1):
         try:
             # judge if is prime num
-            if dividable( primes, i ):
+            if dividable( primes, i ) == False:
                 primes.append(i)
                 yield i
             else:
@@ -110,6 +113,6 @@ def genPrime():
         except:
             break
 
-ite = genPrime()
+ite = genPrime(30)
 for i in ite:
     print(i)
