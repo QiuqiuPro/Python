@@ -7,7 +7,7 @@ week = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 # ユーザーに調べたい年を入力してもらう
 year = input("Enter year.\n>")
 # 閏年かどうか調べて、monthを適宜29日に書き換える
-if (year%4==0) && (year%100!=0) || (year%400==0):
+if (year%4==0) and (year%100!=0) or (year%400==0):
     month['Feb'] = 29
 # 元旦の曜日を算出して、以降の日付をそれに基づいて判断し、出力する
 # calculate

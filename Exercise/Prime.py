@@ -1,10 +1,8 @@
 # 宿題：素数を返すイテレータを作ろう(30まで。)
 # ヒント：素数とは、1と自分自身以外の整数で割り切れないような整数。30まで。
-from time import time ########################3
-
+from time import time #処理時間計測
 from math import sqrt
-
-start_t = time() ########################3
+start_t = time() #処理時間計測
 
 def dividable(lst, num):
     ''' return True if any number in [lst] can divide [num].
@@ -22,23 +20,25 @@ def dividable(lst, num):
     else:
         return False
 
-# generator that gives Prime numbers.
-def genPrime(until_num):
-    primes = []
-    for i in range(2, until_num+1):
-        try:
-            # judge if is prime num
-            if dividable( primes, i ) == False:
-                primes.append(i)
-                yield i
-            else:
-                continue
-        except:
-            break
+# # generator that gives Prime numbers.
+# def genPrime(until_num):
+#     primes = []
+#     for i in range(2, until_num+1):
+#         try:
+#             # judge if is prime num
+#             if dividable( primes, i ) == False:
+#                 primes.append(i)
+#                 yield i
+#             else:
+#                 continue
+#         except:
+#             break
 
 def funcListPrime(until_num):
     list_p = []
+    print("1234567890")
     for i in range(2, until_num+1):
+        if i % 10 == 1: print("")
         if dividable( list_p, i ) == False:
             list_p.append(i)
             print("*",end="")
@@ -54,8 +54,8 @@ def funcListPrime(until_num):
 # print(prime_l[-1])
 # print(len(prime_l))
 
-lstPrime = funcListPrime(300000)
+lstPrime = funcListPrime(300)
 # print(len(lstPrime))
 
-end_t = time()
-print("\n",end_t - start_t)
+end_t = time() #処理時間計測
+print("\n",end_t - start_t) #処理時間計測
