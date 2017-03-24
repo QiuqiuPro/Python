@@ -18,7 +18,7 @@
 # print(s)
 
 # #1 open
-# a_file = open("SampleText.txt", mode="w", encoding="utf-8")
+# a_file = open("SampleText.txt", mode="a", encoding="utf-8")
 # #2 write
 # a_file.write("I've never failed.\n")
 # #3 close
@@ -34,7 +34,7 @@
 # # try... finallyで確実に閉じよう
 # a_file = open("SampleText.txt", mode="w")
 # try:
-#     a_file.write("私は一度も失敗したことがない")
+#     a_file.write("私は一度も失敗したことがない\n")
 #     a_file.write("ただ、一万通りの方法を見つけただけだ")
 # finally:
 #     a_file.close()
@@ -43,21 +43,23 @@
 # with open(ファイル名)　as 変数名:
 #     読み書き処理
 
-# with open("SampleText.txt", mode="w") as f:
-#     f.write("私は失敗したことがない。")
-#     f.write("ただ、一万通りの方法を見つけただけだ")
+# with open("SampleText.txt", mode="a") as f:
+#     f.write("私は失敗したことがない。\n")
+#     f.write("ただ、一万通りの方法を見つけただけだ\n")
 
 # # テキストファイルを1行ずつ処理しよう
 # with open("SampleText.txt", encoding="utf-8") as tf:
-#     for line in tf:
-#         print(line)
+#     for idx, line in enumerate(tf):
+#         if idx < 5:
+#             print(idx, line)
+
 
 # # テキストからキーワードを探す
 # key="find"
 # with open("SampleText.txt", encoding="utf-8") as tf:
-#     for i, line in enumerate(tf):
+#     for idx, line in enumerate(tf):
 #         if line.find(key) >= 0:
-#             print(i+1, ":", line)
+#             print(idx+1, ":", line)
 
 # 1行ずつ読み込む利点
 # 大きなファイルを処理するときに、全部をいっぺんに処理しようとするとメモリを占領してしまいエラーとなる。
@@ -78,6 +80,7 @@
 # data = {
 #     "no": 5,
 #     "code": ("jas", 1, 19),
+#     "list": [1,2,3],
 #     "scr": "be quick to listen, slow to speak, slow to anger",
 # }
 #
@@ -89,4 +92,10 @@
 #     r = json.load(fp)
 #     print("no=", r["no"])
 #     print("code=", r["code"])
+#     print("list=", r["list"])
 #     print("scr=", r["scr"])
+
+import json
+yobi = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+with open("yobi.json", "w") as f:
+    json.dump(yobi, f)
