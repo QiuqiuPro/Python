@@ -68,7 +68,7 @@ def train_digits():
     clf = svm.SVC(gamma=0.001)
     clf.fit(data_train, label_train)
     # 予測モデルを保存
-    joblib.dump(clf, DIGITS_PKL)
+    joblib.dump(clf, DIGITS_PKL) # json.dump(data, filename)
     print("予測モデルを保存しました=", DIGITS_PKL)
     return clf
 

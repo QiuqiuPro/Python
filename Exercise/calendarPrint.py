@@ -1,4 +1,5 @@
 week = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+week = ["Wed","Thu","Fri","Sat","Sun","Mon","Tue"]
 def getMonth(year):
     month = {'Jan':31, 'Feb':28, 'Mar':31, 'Apr':30, 'May':31, 'Jun':30, 'Jul':31, 'Aug':31, 'Sep':30, 'Oct':31, 'Nov':30, 'Dec':31}
     if (year%4==0) and (year%100!=0) or (year%400==0):
@@ -47,16 +48,16 @@ def calcDaysBtwnYears(known_y,unknown_y):
 #         f.write( "    "*(7-(t+days)%7) )
 
 # ある月のカレンダーを辞書型にする
-# 引数：月の名前、最初の日のようび、何日あるのか
+# 引数：ある年のカレンダーの辞書型、月の名前、何日あるのか、最初の日のようび
 # 戻り値：なし
-# 機能：year_dicに月の要素を追加する
+# 機能：year_dicに月の要素(list)を追加する
 def storeCalMonth(year_dic,month,days,dotw):
-    '''例: storeCalMonth("Jan",30,"Tue")'''
+    '''例: storeCalMonth({},"Jan",30,"Tue")'''
     cal_lst=[]
-    cal_lst.append(month.center(28))
+    cal_lst.append(month.center(28)) #"{0:^28}".format(month)
     s=""
-    for y in week:
-        s += y+" "
+    for d in week:
+        s += d+" "
     cal_lst.append(s)
     s=""
     # suppose dotw="Tue" => t==1
@@ -67,12 +68,12 @@ def storeCalMonth(year_dic,month,days,dotw):
         if (t+i)%7 == 0:
             cal_lst.append(s)
             s=""
-            if i == days: break
     else:
         s += "    "*(7-(t+days)%7)
         cal_lst.append(s)
         s=""
-    if len(cal_lst) < 8: cal_lst.append("".center(28))
+    if len(cal_lst) < 8:
+        for i in range(8-len(cal_lst)): cal_lst.append("".center(28))
     year_dic[month]=cal_lst
 
 # 一年のカレンダーを辞書型にする
@@ -90,9 +91,9 @@ def storeCalYear(year):
 # カレンダーを表示する
 # 引数：年、表示レイアウトを示すタプル
 # 戻り値なし
-# 機能：表示
+# 機能：その年のカレンダーを指定したレイアウトで表示
 def showCal(year,tpl):
-    '''例： showCal( (3,4) )'''
+    '''例： showCal( 2017, (3,4) )'''
     title = "Calendar "+str(year)
     print(title.center(31*tpl[0]+3))
     a_year_dic = storeCalYear(year)
