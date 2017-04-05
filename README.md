@@ -20,4 +20,4 @@ Webライブラリ・ドキュメント
 - [Wine Quality Data Set](https://archive.ics.uci.edu/ml/datasets/Wine+Quality) / UCI機械学習リポジトリ（機械学習に使えるデータを収集・公開している場所）
 
 このチュートリアルの主な参考書籍  
-- 「実践力を身につける Pythonの教科書」(著)クジラ飛行机 / [ISBN-13: 978-4839960247](https://ja.wikipedia.org/wiki/特別:文献資料?isbn=978-4839960247)
+- Book1:「実践力を身につける Pythonの教科書」(著)クジラ飛行机 / [ISBN-13: 978-4839960247](https://ja.wikipedia.org/wiki/特別:文献資料?isbn=978-4839960247)
