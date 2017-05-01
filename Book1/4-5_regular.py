@@ -20,3 +20,8 @@ import re
 pat = r"\d+"
 sts = "this pen is 100 yen."
 re.search(pat, sts)
+
+# 正規表現の命令は色々ある。
+# 置き換え：.sub(pattern,repl,string)
+# >>> re.sub(r'a','b','aaa')
+# 'bbb'

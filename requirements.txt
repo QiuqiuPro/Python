@@ -28,3 +28,14 @@ pytz==2016.10
 toolz==0.8.2
 # Pandas
 pandas==0.19.2
+# 株価データを取得するpandas-datareader-0.3.0.post0 requests-2.13.0 requests-file-1.4.1 requests-ftp-0.3.1
+pandas-datareader==0.3.0.post0
+requests==2.13.0
+requests-file==1.4.1
+requests-ftp==0.3.1
+# ローソク足、Plotlyを利用：ipython-genutils-0.2.0 jsonschema-2.6.0 jupyter-core-4.3.0 nbformat-4.3.0 plotly-2.0.7 traitlets-4.3.2
+
+# Jupyter
+# MarkupSafe-1.0 appnope-0.1.0 bleach-2.0.0 entrypoints-0.2.2 html5lib-0.999999999 ipykernel-4.6.1 ipython-6.0.0 ipywidgets-6.0.0 jedi-0.10.2 jinja2-2.9.6 jupyter-1.0.0 jupyter-client-5.0.1 jupyter-console-5.1.0 mistune-0.7.4 nbconvert-5.1.1 notebook-5.0.0 pandocfilters-1.4.1 pexpect-4.2.1 pickleshare-0.7.4 prompt-toolkit-1.0.14 ptyprocess-0.5.1 pygments-2.2.0 pyzmq-16.0.2 qtconsole-4.3.0 simplegeneric-0.8.1 terminado-0.6 testpath-0.3 tornado-4.5.1 wcwidth-0.1.7 webencodings-0.5.1 widgetsnbextension-2.0.0
+# auto-complete for ipython (?)
+# pyreadline-2.1

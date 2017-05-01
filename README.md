@@ -20,4 +20,10 @@ Webライブラリ・ドキュメント
 - [Wine Quality Data Set](https://archive.ics.uci.edu/ml/datasets/Wine+Quality) / UCI機械学習リポジトリ（機械学習に使えるデータを収集・公開している場所）
 
 このチュートリアルの主な参考書籍  
-- Book1:「実践力を身につける Pythonの教科書」(著)クジラ飛行机 / [ISBN-13: 978-4839960247](https://ja.wikipedia.org/wiki/特別:文献資料?isbn=978-4839960247)
+- Book1: クジラ飛行机. "実践力を身につける Pythonの教科書". [ISBN 978-4839960247](https://ja.wikipedia.org/wiki/特別:文献資料?isbn=978-4839960247).
+- Book2: Joel Grus. "ゼロから始める データサイエンス". オライリー・ジャパン, 2017, 373p., [ISBN 978-4873117867](https://ja.wikipedia.org/wiki/特別:文献資料?isbn=978-4873117867).
+- Book3: Cyrille Rossant. "IPythonデータサイエンス クックブック". [ISBN 978-4873117485](https://ja.wikipedia.org/wiki/特別:文献資料?isbn=978-4873117485)
+
+webチュートリアル
+- [言語処理100本ノック](http://www.cl.ecei.tohoku.ac.jp/nlp100/) |
+([その回答例@Qiita](http://qiita.com/gamma1129/items/37bf660cf4e4b21d4267))
